@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\USERS\ALEXA\SOURCE\REPOS\OFICINA\DATABASE.MDF.dbo.tbAtendente' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tbAtendente">
+          <Key>
+            <PropertyRef Name="idAtendente" />
+          </Key>
+          <Property Name="idAtendente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idProduto" Type="int" Nullable="false" />
+          <Property Name="idFornecedor" Type="nchar" MaxLength="10" />
+          <Property Name="descricao" Type="nchar" MaxLength="10" />
+          <Property Name="preco" Type="nchar" MaxLength="10" />
+          <Property Name="estado" Type="nchar" MaxLength="10" />
+          <Property Name="cep" Type="nchar" MaxLength="10" />
+          <Property Name="telefone" Type="nchar" MaxLength="10" />
+          <Property Name="cpf" Type="nchar" MaxLength="10" />
+          <Property Name="login" Type="nchar" MaxLength="10" />
+          <Property Name="senha" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityContainer Name="DatabaseModelStoreContainer">
+          <EntitySet Name="tbAtendente" EntityType="Self.tbAtendente" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[tbAtendente].[idAtendente] AS [idAtendente], 
+[tbAtendente].[idProduto] AS [idProduto], 
+[tbAtendente].[idFornecedor] AS [idFornecedor], 
+[tbAtendente].[descricao] AS [descricao], 
+[tbAtendente].[preco] AS [preco], 
+[tbAtendente].[estado] AS [estado], 
+[tbAtendente].[cep] AS [cep], 
+[tbAtendente].[telefone] AS [telefone], 
+[tbAtendente].[cpf] AS [cpf], 
+[tbAtendente].[login] AS [login], 
+[tbAtendente].[senha] AS [senha]
+FROM [dbo].[tbAtendente] AS [tbAtendente]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DatabaseEntities" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="tbAtendente" EntityType="DatabaseModel.tbAtendente" />
+        </EntityContainer>
+        <EntityType Name="tbAtendente">
+          <Key>
+            <PropertyRef Name="idAtendente" />
+          </Key>
+          <Property Name="idAtendente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" />
+          <Property Name="idProduto" Type="Int32" Nullable="false" />
+          <Property Name="idFornecedor" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="descricao" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="preco" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="estado" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="cep" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="telefone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="cpf" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="login" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="senha" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DatabaseModelStoreContainer" CdmEntityContainer="DatabaseEntities" >
+          <EntitySetMapping Name="tbAtendente">
+            <EntityTypeMapping TypeName="DatabaseModel.tbAtendente">
+              <MappingFragment StoreEntitySet="tbAtendente">
+                <ScalarProperty Name="idAtendente" ColumnName="idAtendente" />
+                <ScalarProperty Name="senha" ColumnName="senha" />
+                <ScalarProperty Name="login" ColumnName="login" />
+                <ScalarProperty Name="cpf" ColumnName="cpf" />
+                <ScalarProperty Name="telefone" ColumnName="telefone" />
+                <ScalarProperty Name="cep" ColumnName="cep" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="preco" ColumnName="preco" />
+                <ScalarProperty Name="descricao" ColumnName="descricao" />
+                <ScalarProperty Name="idFornecedor" ColumnName="idFornecedor" />
+                <ScalarProperty Name="idProduto" ColumnName="idProduto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
