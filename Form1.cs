@@ -16,5 +16,16 @@ namespace Oficina
         {
             InitializeComponent();
         }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            frmCliente clientes = new frmCliente();
+            clientes.Show();
+        }
     }
 }
