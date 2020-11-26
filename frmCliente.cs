@@ -60,6 +60,7 @@ namespace Oficina
                 mesagem = frmMensagem;
                 mesagem.mensagem = "Atualizar";
             }
+            limpar();
             mesagem.Show();
             dtgCliente.DataSource = Todos;
         }
@@ -84,14 +85,7 @@ namespace Oficina
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
-            txtCodigo.Clear();
-            txtNome.Clear();
-            txtTelefone.Clear();
-            txtCPF.Clear();
-            txtEndereco.Clear();
-            txtCep.Clear();
-            txtCidade.Clear();
-            txtEstado.Clear();
+            limpar();
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -111,9 +105,21 @@ namespace Oficina
                 mensagem = "Excluir"
             };
             dtgCliente.DataSource = Todos;
+            limpar();
             mesagem.Show();
         }
 
+        private void limpar()
+        {
+            txtCodigo.Clear();
+            txtNome.Clear();
+            txtTelefone.Clear();
+            txtCPF.Clear();
+            txtEndereco.Clear();
+            txtCep.Clear();
+            txtCidade.Clear();
+            txtEstado.Clear();
+        }
 
         private void txtCPF_TextChanged(object sender, EventArgs e)
         {

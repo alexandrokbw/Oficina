@@ -33,7 +33,7 @@ namespace Oficina
 
                 case "Campo em branco":
                     lblMensagem.Text = "Há campos em branco!";
-                    this.BackColor = Color.Yellow;
+                    this.BackColor = Color.LightSalmon;
                     break;
 
                 case "Salvar":
@@ -49,7 +49,7 @@ namespace Oficina
                 case "Excluir":
                     lblMensagem.Text = "Excluido!";
                     lblMensagem2.Text = "Os dados foram excluidos com sucesso!";
-                    this.BackColor = Color.LightGoldenrodYellow;
+                    this.BackColor = Color.LightSalmon;
                     break;
             }
 
@@ -70,6 +70,11 @@ namespace Oficina
             {
                 this.Close();
             }
+        }
+
+        private void lblMensagem2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
