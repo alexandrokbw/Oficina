@@ -102,12 +102,12 @@ warning 6002: The table/view 'C:\USERS\ALEXA\SOURCE\REPOS\OFICINA\DATABASE.MDF.d
           <Key>
             <PropertyRef Name="idVeiculo" />
           </Key>
-          <Property Name="idVeiculo" Type="int" Nullable="false" />
-          <Property Name="idCliente" Type="nchar" MaxLength="10" />
-          <Property Name="modelo" Type="nchar" MaxLength="10" />
-          <Property Name="marca" Type="nchar" MaxLength="10" />
-          <Property Name="placa" Type="nchar" MaxLength="10" />
-          <Property Name="cor" Type="nchar" MaxLength="10" />
+          <Property Name="idVeiculo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idCliente" Type="int" Nullable="false" />
+          <Property Name="modelo" Type="nvarchar" MaxLength="50" />
+          <Property Name="marca" Type="nvarchar" MaxLength="50" />
+          <Property Name="placa" Type="nvarchar" MaxLength="10" />
+          <Property Name="cor" Type="nvarchar" MaxLength="10" />
         </EntityType>
         <EntityContainer Name="DatabaseModelStoreContainer">
           <EntitySet Name="tbCliente" EntityType="Self.tbCliente" Schema="dbo" store:Type="Tables" />
@@ -242,11 +242,11 @@ FROM [dbo].[tbAtendente] AS [tbAtendente]</DefiningQuery>
             <PropertyRef Name="idVeiculo" />
           </Key>
           <Property Name="idVeiculo" Type="Int32" Nullable="false" />
-          <Property Name="idCliente" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="modelo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="marca" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="placa" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="cor" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="idCliente" Type="Int32" Nullable="false" />
+          <Property Name="modelo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="marca" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="placa" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="cor" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>

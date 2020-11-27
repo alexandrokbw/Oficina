@@ -150,9 +150,12 @@ namespace Oficina
             txtEstado.Text = dtgCliente.Rows[e.RowIndex].Cells["Estado"].Value.ToString();
         }
 
-
-
-
+        private void btnVeiculo_Click(object sender, EventArgs e)
+        {
+            frmVeiculo veiculo = new frmVeiculo();
+            veiculo.idCliente = Convert.ToInt32(txtCodigo.Text);
+            veiculo.ShowDialog();
+        }
     }
 }
 

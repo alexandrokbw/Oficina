@@ -31,8 +31,8 @@ namespace Oficina
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCliente));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.label9 = new System.Windows.Forms.Label();
@@ -57,6 +57,8 @@ namespace Oficina
             this.txtNome = new System.Windows.Forms.TextBox();
             this.dtgCliente = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnVeiculo = new System.Windows.Forms.Label();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCliente)).BeginInit();
             this.SuspendLayout();
@@ -70,6 +72,7 @@ namespace Oficina
             // 
             this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
             this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel1.Controls.Add(this.btnVeiculo);
             this.bunifuGradientPanel1.Controls.Add(this.label9);
             this.bunifuGradientPanel1.Controls.Add(this.btnExcluir);
             this.bunifuGradientPanel1.Controls.Add(this.btnNovo);
@@ -103,7 +106,7 @@ namespace Oficina
             this.btnExcluir.AutoSize = true;
             this.btnExcluir.BackColor = System.Drawing.Color.Transparent;
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.Location = new System.Drawing.Point(373, 19);
+            this.btnExcluir.Location = new System.Drawing.Point(369, 19);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(54, 16);
             this.btnExcluir.TabIndex = 6;
@@ -115,7 +118,7 @@ namespace Oficina
             this.btnNovo.AutoSize = true;
             this.btnNovo.BackColor = System.Drawing.Color.Transparent;
             this.btnNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNovo.Location = new System.Drawing.Point(480, 19);
+            this.btnNovo.Location = new System.Drawing.Point(464, 19);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(45, 16);
             this.btnNovo.TabIndex = 5;
@@ -276,19 +279,19 @@ namespace Oficina
             // 
             this.dtgCliente.AllowUserToAddRows = false;
             this.dtgCliente.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dtgCliente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dtgCliente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dtgCliente.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dtgCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgCliente.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dtgCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idCliente});
@@ -312,6 +315,25 @@ namespace Oficina
             this.idCliente.HeaderText = "Código";
             this.idCliente.Name = "idCliente";
             this.idCliente.ReadOnly = true;
+            // 
+            // btnVeiculo
+            // 
+            this.btnVeiculo.AutoSize = true;
+            this.btnVeiculo.BackColor = System.Drawing.Color.Transparent;
+            this.btnVeiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVeiculo.Location = new System.Drawing.Point(550, 19);
+            this.btnVeiculo.Name = "btnVeiculo";
+            this.btnVeiculo.Size = new System.Drawing.Size(60, 16);
+            this.btnVeiculo.TabIndex = 8;
+            this.btnVeiculo.Text = "Veiculo";
+            this.btnVeiculo.Click += new System.EventHandler(this.btnVeiculo_Click);
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.bunifuGradientPanel1;
+            this.bunifuDragControl1.Vertical = true;
             // 
             // frmCliente
             // 
@@ -375,5 +397,7 @@ namespace Oficina
         private System.Windows.Forms.Label btnNovo;
         private System.Windows.Forms.Label btnSalvar;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label btnVeiculo;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
     }
 }

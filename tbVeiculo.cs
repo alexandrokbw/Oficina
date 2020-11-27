@@ -15,7 +15,7 @@ namespace Oficina
     public partial class tbVeiculo
     {
         public int idVeiculo { get; set; }
-        public string idCliente { get; set; }
+        public int idCliente { get; set; }
         public string modelo { get; set; }
         public string marca { get; set; }
         public string placa { get; set; }
