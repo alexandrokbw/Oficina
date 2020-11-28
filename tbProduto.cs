@@ -14,9 +14,14 @@ namespace Oficina
     
     public partial class tbProduto
     {
-        public int idLote { get; set; }
-        public string idProduto { get; set; }
+        public int idProduto { get; set; }
+        public int idFornecedor { get; set; }
         public string codigo { get; set; }
-        public string lote { get; set; }
+        public string descricao { get; set; }
+        public Nullable<decimal> precoCusto { get; set; }
+        public Nullable<decimal> precoVenda { get; set; }
+        public string estoqueMinimo { get; set; }
+        public string estoque { get; set; }
+        public string tipo { get; set; }
     }
 }

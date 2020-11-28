@@ -27,5 +27,23 @@ namespace Oficina
             frmCliente clientes = new frmCliente();
             clientes.Show();
         }
+
+        private void btnFornecedor_Click(object sender, EventArgs e)
+        {
+            frmFornecedor fornecedor = new frmFornecedor();
+            fornecedor.ShowDialog();
+        }
+
+        private void btnAtendente_Click(object sender, EventArgs e)
+        {
+            frmAtendente atendente = new frmAtendente();
+            atendente.ShowDialog();
+        }
+
+        private void btnProduto_Click(object sender, EventArgs e)
+        {
+            frmProduto produto = new frmProduto();
+            produto.ShowDialog();
+        }
     }
 }

@@ -15,15 +15,14 @@ namespace Oficina
     public partial class tbAtendente
     {
         public int idAtendente { get; set; }
-        public int idProduto { get; set; }
-        public string idFornecedor { get; set; }
-        public string descricao { get; set; }
-        public string preco { get; set; }
+        public string nome { get; set; }
+        public string login { get; set; }
+        public string telefone { get; set; }
+        public string endereco { get; set; }
+        public string cidade { get; set; }
         public string estado { get; set; }
         public string cep { get; set; }
-        public string telefone { get; set; }
         public string cpf { get; set; }
-        public string login { get; set; }
         public string senha { get; set; }
     }
 }

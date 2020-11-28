@@ -33,11 +33,11 @@ namespace Oficina
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVeiculo));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.dtgVeiculo = new System.Windows.Forms.DataGridView();
             this.btnSair = new System.Windows.Forms.Label();
             this.btnExcluir = new System.Windows.Forms.Label();
             this.btnNovo = new System.Windows.Forms.Label();
             this.btnSalvar = new System.Windows.Forms.Label();
+            this.dtgVeiculo = new System.Windows.Forms.DataGridView();
             this.txtCodigoCliente = new System.Windows.Forms.TextBox();
             this.txtPlaca = new System.Windows.Forms.TextBox();
             this.txtCodigoVeiculo = new System.Windows.Forms.TextBox();
@@ -51,6 +51,7 @@ namespace Oficina
             this.label6 = new System.Windows.Forms.Label();
             this.txtCor = new System.Windows.Forms.TextBox();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.idVeiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgVeiculo)).BeginInit();
             this.SuspendLayout();
@@ -79,16 +80,6 @@ namespace Oficina
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(377, 48);
             this.bunifuGradientPanel1.TabIndex = 0;
             // 
-            // dtgVeiculo
-            // 
-            this.dtgVeiculo.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dtgVeiculo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgVeiculo.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dtgVeiculo.Location = new System.Drawing.Point(0, 202);
-            this.dtgVeiculo.Name = "dtgVeiculo";
-            this.dtgVeiculo.Size = new System.Drawing.Size(377, 224);
-            this.dtgVeiculo.TabIndex = 1;
-            // 
             // btnSair
             // 
             this.btnSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -112,6 +103,7 @@ namespace Oficina
             this.btnExcluir.Size = new System.Drawing.Size(54, 16);
             this.btnExcluir.TabIndex = 10;
             this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnNovo
             // 
@@ -123,6 +115,7 @@ namespace Oficina
             this.btnNovo.Size = new System.Drawing.Size(45, 16);
             this.btnNovo.TabIndex = 9;
             this.btnNovo.Text = "Novo";
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // btnSalvar
             // 
@@ -136,8 +129,27 @@ namespace Oficina
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
+            // dtgVeiculo
+            // 
+            this.dtgVeiculo.AllowUserToAddRows = false;
+            this.dtgVeiculo.AllowUserToDeleteRows = false;
+            this.dtgVeiculo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgVeiculo.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dtgVeiculo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgVeiculo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idVeiculo});
+            this.dtgVeiculo.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dtgVeiculo.Location = new System.Drawing.Point(0, 202);
+            this.dtgVeiculo.Name = "dtgVeiculo";
+            this.dtgVeiculo.ReadOnly = true;
+            this.dtgVeiculo.RowHeadersVisible = false;
+            this.dtgVeiculo.Size = new System.Drawing.Size(377, 224);
+            this.dtgVeiculo.TabIndex = 1;
+            this.dtgVeiculo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgVeiculo_CellClick);
+            // 
             // txtCodigoCliente
             // 
+            this.txtCodigoCliente.Enabled = false;
             this.txtCodigoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigoCliente.Location = new System.Drawing.Point(83, 55);
             this.txtCodigoCliente.Name = "txtCodigoCliente";
@@ -153,6 +165,7 @@ namespace Oficina
             // 
             // txtCodigoVeiculo
             // 
+            this.txtCodigoVeiculo.Enabled = false;
             this.txtCodigoVeiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigoVeiculo.Location = new System.Drawing.Point(84, 79);
             this.txtCodigoVeiculo.Name = "txtCodigoVeiculo";
@@ -241,6 +254,13 @@ namespace Oficina
             this.bunifuDragControl1.TargetControl = this.bunifuGradientPanel1;
             this.bunifuDragControl1.Vertical = true;
             // 
+            // idVeiculo
+            // 
+            this.idVeiculo.DataPropertyName = "idVeiculo";
+            this.idVeiculo.HeaderText = "Código";
+            this.idVeiculo.Name = "idVeiculo";
+            this.idVeiculo.ReadOnly = true;
+            // 
             // frmVeiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -295,5 +315,6 @@ namespace Oficina
         private System.Windows.Forms.TextBox txtPlaca;
         private System.Windows.Forms.TextBox txtCodigoCliente;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idVeiculo;
     }
 }

@@ -31,10 +31,11 @@ namespace Oficina
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCliente));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.btnVeiculo = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.btnExcluir = new System.Windows.Forms.Label();
             this.btnNovo = new System.Windows.Forms.Label();
@@ -56,9 +57,9 @@ namespace Oficina
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.dtgCliente = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnVeiculo = new System.Windows.Forms.Label();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.senha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCliente)).BeginInit();
             this.SuspendLayout();
@@ -87,6 +88,18 @@ namespace Oficina
             this.bunifuGradientPanel1.Quality = 10;
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(800, 54);
             this.bunifuGradientPanel1.TabIndex = 0;
+            // 
+            // btnVeiculo
+            // 
+            this.btnVeiculo.AutoSize = true;
+            this.btnVeiculo.BackColor = System.Drawing.Color.Transparent;
+            this.btnVeiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVeiculo.Location = new System.Drawing.Point(550, 19);
+            this.btnVeiculo.Name = "btnVeiculo";
+            this.btnVeiculo.Size = new System.Drawing.Size(60, 16);
+            this.btnVeiculo.TabIndex = 8;
+            this.btnVeiculo.Text = "Veiculo";
+            this.btnVeiculo.Click += new System.EventHandler(this.btnVeiculo_Click);
             // 
             // label9
             // 
@@ -279,22 +292,23 @@ namespace Oficina
             // 
             this.dtgCliente.AllowUserToAddRows = false;
             this.dtgCliente.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dtgCliente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dtgCliente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgCliente.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dtgCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgCliente.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtgCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idCliente});
+            this.idCliente,
+            this.senha});
             this.dtgCliente.DoubleBuffered = true;
             this.dtgCliente.EnableHeadersVisualStyles = false;
             this.dtgCliente.HeaderBgColor = System.Drawing.Color.Teal;
@@ -309,6 +323,13 @@ namespace Oficina
             this.dtgCliente.TabIndex = 18;
             this.dtgCliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgCliente_CellClick);
             // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.bunifuGradientPanel1;
+            this.bunifuDragControl1.Vertical = true;
+            // 
             // idCliente
             // 
             this.idCliente.DataPropertyName = "idCliente";
@@ -316,24 +337,13 @@ namespace Oficina
             this.idCliente.Name = "idCliente";
             this.idCliente.ReadOnly = true;
             // 
-            // btnVeiculo
+            // senha
             // 
-            this.btnVeiculo.AutoSize = true;
-            this.btnVeiculo.BackColor = System.Drawing.Color.Transparent;
-            this.btnVeiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVeiculo.Location = new System.Drawing.Point(550, 19);
-            this.btnVeiculo.Name = "btnVeiculo";
-            this.btnVeiculo.Size = new System.Drawing.Size(60, 16);
-            this.btnVeiculo.TabIndex = 8;
-            this.btnVeiculo.Text = "Veiculo";
-            this.btnVeiculo.Click += new System.EventHandler(this.btnVeiculo_Click);
-            // 
-            // bunifuDragControl1
-            // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this.bunifuGradientPanel1;
-            this.bunifuDragControl1.Vertical = true;
+            this.senha.DataPropertyName = "senha";
+            this.senha.HeaderText = "senha";
+            this.senha.Name = "senha";
+            this.senha.ReadOnly = true;
+            this.senha.Visible = false;
             // 
             // frmCliente
             // 
@@ -392,12 +402,13 @@ namespace Oficina
         private System.Windows.Forms.TextBox txtCidade;
         private System.Windows.Forms.TextBox txtNome;
         private Bunifu.Framework.UI.BunifuCustomDataGrid dtgCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idCliente;
         private System.Windows.Forms.Label btnExcluir;
         private System.Windows.Forms.Label btnNovo;
         private System.Windows.Forms.Label btnSalvar;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label btnVeiculo;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn senha;
     }
 }

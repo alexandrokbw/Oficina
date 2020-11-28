@@ -14,7 +14,7 @@ namespace Oficina
     
     public partial class tbFornecedor
     {
-        public int idCliente { get; set; }
+        public int idFornecedor { get; set; }
         public string nome { get; set; }
         public string endereco { get; set; }
         public string cidade { get; set; }
