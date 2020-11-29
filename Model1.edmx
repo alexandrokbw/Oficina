@@ -93,8 +93,8 @@
           <Property Name="idFornecedor" Type="int" Nullable="false" />
           <Property Name="descricao" Type="nvarchar" MaxLength="50" />
           <Property Name="codigo" Type="nvarchar" MaxLength="50" />
-          <Property Name="precoCusto" Type="decimal" Precision="2" Scale="0" />
-          <Property Name="precoVenda" Type="decimal" Precision="2" Scale="0" />
+          <Property Name="precoCusto" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="precoVenda" Type="decimal" Precision="5" Scale="2" />
           <Property Name="estoqueMinimo" Type="nvarchar" MaxLength="5" />
           <Property Name="estoque" Type="nvarchar" MaxLength="5" />
           <Property Name="tipo" Type="nvarchar" MaxLength="10" />
@@ -222,8 +222,8 @@
           <Property Name="idFornecedor" Type="Int32" Nullable="false" />
           <Property Name="codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="descricao" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="precoCusto" Type="Decimal" Precision="2" Scale="0" />
-          <Property Name="precoVenda" Type="Decimal" Precision="2" Scale="0" />
+          <Property Name="precoCusto" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="precoVenda" Type="Decimal" Precision="5" Scale="2" />
           <Property Name="estoqueMinimo" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
           <Property Name="estoque" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
           <Property Name="tipo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
