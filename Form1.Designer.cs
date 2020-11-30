@@ -33,6 +33,7 @@ namespace Oficina
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.btnPedidoFor = new System.Windows.Forms.Label();
             this.btnProduto = new System.Windows.Forms.Label();
             this.btnAtendente = new System.Windows.Forms.Label();
             this.btnFornecedor = new System.Windows.Forms.Label();
@@ -50,6 +51,7 @@ namespace Oficina
             // 
             this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
             this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel1.Controls.Add(this.btnPedidoFor);
             this.bunifuGradientPanel1.Controls.Add(this.btnProduto);
             this.bunifuGradientPanel1.Controls.Add(this.btnAtendente);
             this.bunifuGradientPanel1.Controls.Add(this.btnFornecedor);
@@ -66,12 +68,24 @@ namespace Oficina
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(1060, 52);
             this.bunifuGradientPanel1.TabIndex = 0;
             // 
+            // btnPedidoFor
+            // 
+            this.btnPedidoFor.AutoSize = true;
+            this.btnPedidoFor.BackColor = System.Drawing.Color.Transparent;
+            this.btnPedidoFor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPedidoFor.Location = new System.Drawing.Point(343, 25);
+            this.btnPedidoFor.Name = "btnPedidoFor";
+            this.btnPedidoFor.Size = new System.Drawing.Size(137, 16);
+            this.btnPedidoFor.TabIndex = 5;
+            this.btnPedidoFor.Text = "Pedido fornecedor";
+            this.btnPedidoFor.Click += new System.EventHandler(this.btnPedidoFor_Click);
+            // 
             // btnProduto
             // 
             this.btnProduto.AutoSize = true;
             this.btnProduto.BackColor = System.Drawing.Color.Transparent;
             this.btnProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProduto.Location = new System.Drawing.Point(622, 25);
+            this.btnProduto.Location = new System.Drawing.Point(646, 25);
             this.btnProduto.Name = "btnProduto";
             this.btnProduto.Size = new System.Drawing.Size(62, 16);
             this.btnProduto.TabIndex = 4;
@@ -83,7 +97,7 @@ namespace Oficina
             this.btnAtendente.AutoSize = true;
             this.btnAtendente.BackColor = System.Drawing.Color.Transparent;
             this.btnAtendente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtendente.Location = new System.Drawing.Point(500, 25);
+            this.btnAtendente.Location = new System.Drawing.Point(524, 25);
             this.btnAtendente.Name = "btnAtendente";
             this.btnAtendente.Size = new System.Drawing.Size(78, 16);
             this.btnAtendente.TabIndex = 3;
@@ -95,7 +109,7 @@ namespace Oficina
             this.btnFornecedor.AutoSize = true;
             this.btnFornecedor.BackColor = System.Drawing.Color.Transparent;
             this.btnFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFornecedor.Location = new System.Drawing.Point(754, 25);
+            this.btnFornecedor.Location = new System.Drawing.Point(752, 25);
             this.btnFornecedor.Name = "btnFornecedor";
             this.btnFornecedor.Size = new System.Drawing.Size(88, 16);
             this.btnFornecedor.TabIndex = 2;
@@ -107,7 +121,7 @@ namespace Oficina
             this.btnClientes.AutoSize = true;
             this.btnClientes.BackColor = System.Drawing.Color.Transparent;
             this.btnClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClientes.Location = new System.Drawing.Point(886, 25);
+            this.btnClientes.Location = new System.Drawing.Point(884, 25);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(64, 16);
             this.btnClientes.TabIndex = 1;
@@ -136,6 +150,8 @@ namespace Oficina
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -151,6 +167,7 @@ namespace Oficina
         private System.Windows.Forms.Label btnFornecedor;
         private System.Windows.Forms.Label btnProduto;
         private System.Windows.Forms.Label btnAtendente;
+        private System.Windows.Forms.Label btnPedidoFor;
     }
 }
 

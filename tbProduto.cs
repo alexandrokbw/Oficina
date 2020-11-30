@@ -11,8 +11,7 @@ namespace Oficina
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class tbProduto
     {
         public int idProduto { get; set; }

@@ -17,6 +17,11 @@ namespace Oficina
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+            //frmLogin formLogin = new frmLogin();
+            //if (formLogin.ShowDialog() == DialogResult.OK)
+            //{
+            //    Application.Run(new Form1());
+            //}
         }
     }
 }

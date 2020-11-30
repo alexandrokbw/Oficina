@@ -51,6 +51,11 @@ namespace Oficina
                     lblMensagem2.Text = "Os dados foram excluidos com sucesso!";
                     this.BackColor = Color.LightSalmon;
                     break;
+                case "Erro login":
+                    lblMensagem.Text = "Ops!";
+                    lblMensagem2.Text = "Nome ou senha \n Incorretos";
+                    this.BackColor = Color.LightSalmon;
+                    break;
             }
 
         }

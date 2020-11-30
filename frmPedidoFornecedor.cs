@@ -25,23 +25,33 @@ namespace Oficina
         private void listarPedidoAguardando()
         {
             DatabaseEntities dataBase = new DatabaseEntities();
-            var dt = from Fornecedor in dataBase.tbFornecedor
-                     join Produto in dataBase.tbProduto
-                     on Fornecedor.idFornecedor equals Produto.idFornecedor
+            var dt = from pedidoFor in dataBase.tbPedidoFornecedor
+                     join Fornecedor in dataBase.tbFornecedor on pedidoFor.idFornecedor equals Fornecedor.idFornecedor
+                     join produto in dataBase.tbProduto on pedidoFor.idProduto equals produto.idProduto
                      select new
                      {
-                         Fornecedor.idFornecedor,
-                         Fornecedor.nome,
-                         Produto.idProduto,
-                         Produto.codigo,
-                         Produto.descricao,
-                         Produto.precoCusto,
-                         Produto.precoVenda,
-                         Produto.estoque,
-                         Produto.estoqueMinimo,
-                         Produto.tipo,
+                         pedidoFor.idFornecedor,
+                         Fornecedor = Fornecedor.nome,
+                         produto.idProduto,
+                         produto.codigo,
+                         produto.descricao,
+                         produto.precoCusto,
+                         produto.precoVenda,
+                         produto.estoque,
+                         produto.estoqueMinimo,
+                         produto.tipo,
+                         pedidoFor.quantidiade,
+                         pedidoFor.stausPedido,
+                         //pedidoFor.dataRecebiemnto,
+                         pedidoFor.dataSolicitacao,
+                         pedidoFor.usuario
                      };
-            dtgProduto.DataSource = dt.ToList();
+            dtgPedido.DataSource = dt.ToList();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

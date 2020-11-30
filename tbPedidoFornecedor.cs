@@ -14,13 +14,13 @@ namespace Oficina
     
     public partial class tbPedidoFornecedor
     {
-        public int idPedidoCliente { get; set; }
-        public string idProduto { get; set; }
-        public string idCliente { get; set; }
-        public string idLote { get; set; }
-        public string idAtendente { get; set; }
-        public string idPedidoFornecedor { get; set; }
-        public string data { get; set; }
-        public string quantidade { get; set; }
+        public int idPedidoFornecedor { get; set; }
+        public int idProduto { get; set; }
+        public int idFornecedor { get; set; }
+        public string usuario { get; set; }
+        public string dataSolicitacao { get; set; }
+        public string dataRecebiemnto { get; set; }
+        public string stausPedido { get; set; }
+        public string quantidiade { get; set; }
     }
 }

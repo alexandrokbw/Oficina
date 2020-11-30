@@ -46,16 +46,6 @@
           <Property Name="telefone" Type="nvarchar" MaxLength="14" />
           <Property Name="cnpj" Type="nvarchar" MaxLength="20" />
         </EntityType>
-        <EntityType Name="tbLote">
-          <Key>
-            <PropertyRef Name="idPedidoFornecedor" />
-          </Key>
-          <Property Name="idPedidoFornecedor" Type="int" Nullable="false" />
-          <Property Name="idProduto" Type="nchar" MaxLength="10" />
-          <Property Name="idFornecedor" Type="nchar" MaxLength="10" />
-          <Property Name="idAtendente" Type="nchar" MaxLength="10" />
-          <Property Name="quantidade" Type="nchar" MaxLength="10" />
-        </EntityType>
         <EntityType Name="tbPedidoCliente">
           <Key>
             <PropertyRef Name="idPedidoCliente" />
@@ -74,16 +64,16 @@
         </EntityType>
         <EntityType Name="tbPedidoFornecedor">
           <Key>
-            <PropertyRef Name="idPedidoCliente" />
+            <PropertyRef Name="idPedidoFornecedor" />
           </Key>
-          <Property Name="idPedidoCliente" Type="int" Nullable="false" />
-          <Property Name="idProduto" Type="nchar" MaxLength="10" />
-          <Property Name="idCliente" Type="nchar" MaxLength="10" />
-          <Property Name="idLote" Type="nchar" MaxLength="10" />
-          <Property Name="idAtendente" Type="nchar" MaxLength="10" />
-          <Property Name="idPedidoFornecedor" Type="nchar" MaxLength="10" />
-          <Property Name="data" Type="nchar" MaxLength="10" />
-          <Property Name="quantidade" Type="nchar" MaxLength="10" />
+          <Property Name="idPedidoFornecedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idFornecedor" Type="int" Nullable="false" />
+          <Property Name="idProduto" Type="int" Nullable="false" />
+          <Property Name="usuario" Type="nvarchar" MaxLength="50" />
+          <Property Name="dataSolicitacao" Type="nvarchar" MaxLength="10" />
+          <Property Name="dataRecebiemnto" Type="nvarchar" MaxLength="10" />
+          <Property Name="stausPedido" Type="nvarchar" MaxLength="20" />
+          <Property Name="quantidiade" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="tbProduto">
           <Key>
@@ -114,7 +104,6 @@
           <EntitySet Name="tbAtendente" EntityType="Self.tbAtendente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbCliente" EntityType="Self.tbCliente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbFornecedor" EntityType="Self.tbFornecedor" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="tbLote" EntityType="Self.tbLote" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbPedidoCliente" EntityType="Self.tbPedidoCliente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbPedidoFornecedor" EntityType="Self.tbPedidoFornecedor" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbProduto" EntityType="Self.tbProduto" Schema="dbo" store:Type="Tables" />
@@ -128,7 +117,6 @@
           <EntitySet Name="tbAtendente" EntityType="DatabaseModel.tbAtendente" />
           <EntitySet Name="tbCliente" EntityType="DatabaseModel.tbCliente" />
           <EntitySet Name="tbFornecedor" EntityType="DatabaseModel.tbFornecedor" />
-          <EntitySet Name="tbLote" EntityType="DatabaseModel.tbLote" />
           <EntitySet Name="tbPedidoCliente" EntityType="DatabaseModel.tbPedidoCliente" />
           <EntitySet Name="tbPedidoFornecedor" EntityType="DatabaseModel.tbPedidoFornecedor" />
           <EntitySet Name="tbProduto" EntityType="DatabaseModel.tbProduto" />
@@ -175,16 +163,6 @@
           <Property Name="telefone" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
           <Property Name="cnpj" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="tbLote">
-          <Key>
-            <PropertyRef Name="idPedidoFornecedor" />
-          </Key>
-          <Property Name="idPedidoFornecedor" Type="Int32" Nullable="false" />
-          <Property Name="idProduto" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="idFornecedor" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="idAtendente" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="quantidade" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-        </EntityType>
         <EntityType Name="tbPedidoCliente">
           <Key>
             <PropertyRef Name="idPedidoCliente" />
@@ -203,16 +181,16 @@
         </EntityType>
         <EntityType Name="tbPedidoFornecedor">
           <Key>
-            <PropertyRef Name="idPedidoCliente" />
+            <PropertyRef Name="idPedidoFornecedor" />
           </Key>
-          <Property Name="idPedidoCliente" Type="Int32" Nullable="false" />
-          <Property Name="idProduto" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="idCliente" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="idLote" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="idAtendente" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="idPedidoFornecedor" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="data" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="quantidade" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="idPedidoFornecedor" Type="Int32" Nullable="false" />
+          <Property Name="idProduto" Type="Int32" Nullable="false" />
+          <Property Name="idFornecedor" Type="Int32" Nullable="false" />
+          <Property Name="usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dataSolicitacao" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="dataRecebiemnto" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="stausPedido" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="quantidiade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="tbProduto">
           <Key>
@@ -289,17 +267,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="tbLote">
-            <EntityTypeMapping TypeName="DatabaseModel.tbLote">
-              <MappingFragment StoreEntitySet="tbLote">
-                <ScalarProperty Name="quantidade" ColumnName="quantidade" />
-                <ScalarProperty Name="idAtendente" ColumnName="idAtendente" />
-                <ScalarProperty Name="idFornecedor" ColumnName="idFornecedor" />
-                <ScalarProperty Name="idProduto" ColumnName="idProduto" />
-                <ScalarProperty Name="idPedidoFornecedor" ColumnName="idPedidoFornecedor" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="tbPedidoCliente">
             <EntityTypeMapping TypeName="DatabaseModel.tbPedidoCliente">
               <MappingFragment StoreEntitySet="tbPedidoCliente">
@@ -320,14 +287,14 @@
           <EntitySetMapping Name="tbPedidoFornecedor">
             <EntityTypeMapping TypeName="DatabaseModel.tbPedidoFornecedor">
               <MappingFragment StoreEntitySet="tbPedidoFornecedor">
-                <ScalarProperty Name="quantidade" ColumnName="quantidade" />
-                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="quantidiade" ColumnName="quantidiade" />
+                <ScalarProperty Name="stausPedido" ColumnName="stausPedido" />
+                <ScalarProperty Name="dataRecebiemnto" ColumnName="dataRecebiemnto" />
+                <ScalarProperty Name="dataSolicitacao" ColumnName="dataSolicitacao" />
+                <ScalarProperty Name="usuario" ColumnName="usuario" />
+                <ScalarProperty Name="idFornecedor" ColumnName="idFornecedor" />
                 <ScalarProperty Name="idPedidoFornecedor" ColumnName="idPedidoFornecedor" />
-                <ScalarProperty Name="idAtendente" ColumnName="idAtendente" />
-                <ScalarProperty Name="idLote" ColumnName="idLote" />
-                <ScalarProperty Name="idCliente" ColumnName="idCliente" />
                 <ScalarProperty Name="idProduto" ColumnName="idProduto" />
-                <ScalarProperty Name="idPedidoCliente" ColumnName="idPedidoCliente" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

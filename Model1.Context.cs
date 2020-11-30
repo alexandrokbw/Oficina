@@ -28,7 +28,6 @@ namespace Oficina
         public DbSet<tbAtendente> tbAtendente { get; set; }
         public DbSet<tbCliente> tbCliente { get; set; }
         public DbSet<tbFornecedor> tbFornecedor { get; set; }
-        public DbSet<tbLote> tbLote { get; set; }
         public DbSet<tbPedidoCliente> tbPedidoCliente { get; set; }
         public DbSet<tbPedidoFornecedor> tbPedidoFornecedor { get; set; }
         public DbSet<tbProduto> tbProduto { get; set; }
