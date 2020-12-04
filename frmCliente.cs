@@ -156,6 +156,11 @@ namespace Oficina
             veiculo.idCliente = Convert.ToInt32(txtCodigo.Text);
             veiculo.ShowDialog();
         }
+
+        private void btnAddPedido_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

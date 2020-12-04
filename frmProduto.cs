@@ -17,6 +17,8 @@ namespace Oficina
         {
             InitializeComponent();
         }
+        internal string _idFornecedor,codigoBarras, descricaoProduto, codigoFor, nomefornecedor, tipo,_idProduto;
+
         frmMensagem mensagem;
         private void btnSair_Click(object sender, EventArgs e)
         {
@@ -26,10 +28,18 @@ namespace Oficina
         private void frmProduto_Load(object sender, EventArgs e)
         {
             listarProduto();
-            listaFornecedor.DataSource = Todos;
-            listaFornecedor.ValueMember = "idFornecedor";
-            listaFornecedor.DisplayMember = "nome";
+            DatabaseEntities dataBase = new DatabaseEntities();
+            List<tbFornecedor> lista = dataBase.tbFornecedor.ToList();
+            foreach (tbFornecedor p in lista)
+            {
+                ListViewItem item = new ListViewItem(p.idFornecedor.ToString());
+                item.SubItems.Add(p.nome);
+                item.SubItems.Add(p.idFornecedor.ToString());
+                item.SubItems.Add(p.telefone);
 
+                listView1.Items.Add(item);
+            }
+            listView1.FullRowSelect = true;
         }
 
         public virtual List<tbFornecedor> Todos
@@ -67,6 +77,7 @@ namespace Oficina
         private void dtgProduto_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtCodigo.Text = dtgProduto.Rows[e.RowIndex].Cells["idProduto"].Value.ToString();
+            lblFornecedor.Text = dtgProduto.Rows[e.RowIndex].Cells["nome"].Value.ToString();
             txtCodigoFor.Text = dtgProduto.Rows[e.RowIndex].Cells["idFornecedor"].Value.ToString();
             txtDescricao.Text = dtgProduto.Rows[e.RowIndex].Cells["descricao"].Value.ToString();
             txtCodigoBarras.Text = dtgProduto.Rows[e.RowIndex].Cells["codigo"].Value.ToString();
@@ -147,9 +158,17 @@ namespace Oficina
 
         }
 
-        private void listaFornecedor_SelectedIndexChanged(object sender, EventArgs e)
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtCodigoFor.Text = listaFornecedor.SelectedValue.ToString();
+            
+
+        }
+
+        private void listView1_Click(object sender, EventArgs e)
+        {
+            var lista = listView1.SelectedItems;
+            txtCodigoFor.Text = lista[0].Text;
+            lblFornecedor.Text = lista[0].SubItems[1].Text;
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -178,6 +197,18 @@ namespace Oficina
             limpar();
             mensagem.Show();
 
+        }
+
+        private void btnAddProduto_Click(object sender, EventArgs e)
+        {
+            codigoBarras = txtCodigoBarras.Text;
+            descricaoProduto = txtDescricao.Text;
+            nomefornecedor = lblFornecedor.Text;
+            codigoFor = txtCodigoFor.Text;
+            tipo = txtTipo.Text;
+            _idProduto = txtCodigo.Text;
+            _idFornecedor = txtCodigoFor.Text;
+            this.DialogResult = System.Windows.Forms.DialogResult.OK;
         }
     }
 }

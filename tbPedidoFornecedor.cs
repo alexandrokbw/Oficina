@@ -15,12 +15,12 @@ namespace Oficina
     public partial class tbPedidoFornecedor
     {
         public int idPedidoFornecedor { get; set; }
-        public int idProduto { get; set; }
         public int idFornecedor { get; set; }
+        public int idProduto { get; set; }
         public string usuario { get; set; }
         public string dataSolicitacao { get; set; }
         public string dataRecebiemnto { get; set; }
         public string stausPedido { get; set; }
-        public string quantidiade { get; set; }
+        public string quantidade { get; set; }
     }
 }

@@ -30,8 +30,8 @@ namespace Oficina
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProduto));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.dtgProduto = new Bunifu.Framework.UI.BunifuCustomDataGrid();
@@ -61,8 +61,12 @@ namespace Oficina
             this.label9 = new System.Windows.Forms.Label();
             this.txtEstoqueAtual = new System.Windows.Forms.TextBox();
             this.txtTipo = new System.Windows.Forms.ComboBox();
-            this.listaFornecedor = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnAddProduto = new System.Windows.Forms.Label();
+            this.lblFornecedor = new System.Windows.Forms.Label();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.idFor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.nomeFor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.dtgProduto)).BeginInit();
             this.bunifuGradientPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -77,20 +81,20 @@ namespace Oficina
             // 
             this.dtgProduto.AllowUserToAddRows = false;
             this.dtgProduto.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dtgProduto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dtgProduto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dtgProduto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgProduto.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dtgProduto.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgProduto.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgProduto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgProduto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dtgProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgProduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idProduto,
@@ -105,7 +109,7 @@ namespace Oficina
             this.dtgProduto.ReadOnly = true;
             this.dtgProduto.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dtgProduto.RowHeadersVisible = false;
-            this.dtgProduto.Size = new System.Drawing.Size(722, 260);
+            this.dtgProduto.Size = new System.Drawing.Size(720, 260);
             this.dtgProduto.TabIndex = 0;
             this.dtgProduto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProduto_CellClick);
             // 
@@ -128,6 +132,7 @@ namespace Oficina
             // 
             this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
             this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel1.Controls.Add(this.btnAddProduto);
             this.bunifuGradientPanel1.Controls.Add(this.btnExcluir);
             this.bunifuGradientPanel1.Controls.Add(this.btnNovo);
             this.bunifuGradientPanel1.Controls.Add(this.btnSalvar);
@@ -140,7 +145,7 @@ namespace Oficina
             this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 10;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(722, 45);
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(720, 45);
             this.bunifuGradientPanel1.TabIndex = 1;
             this.bunifuGradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.bunifuGradientPanel1_Paint);
             // 
@@ -149,7 +154,7 @@ namespace Oficina
             this.btnExcluir.AutoSize = true;
             this.btnExcluir.BackColor = System.Drawing.Color.Transparent;
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.Location = new System.Drawing.Point(334, 14);
+            this.btnExcluir.Location = new System.Drawing.Point(284, 14);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(54, 16);
             this.btnExcluir.TabIndex = 13;
@@ -161,7 +166,7 @@ namespace Oficina
             this.btnNovo.AutoSize = true;
             this.btnNovo.BackColor = System.Drawing.Color.Transparent;
             this.btnNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNovo.Location = new System.Drawing.Point(441, 14);
+            this.btnNovo.Location = new System.Drawing.Point(394, 14);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(45, 16);
             this.btnNovo.TabIndex = 12;
@@ -173,7 +178,7 @@ namespace Oficina
             this.btnSalvar.AutoSize = true;
             this.btnSalvar.BackColor = System.Drawing.Color.Transparent;
             this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.Location = new System.Drawing.Point(236, 14);
+            this.btnSalvar.Location = new System.Drawing.Point(175, 14);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(53, 16);
             this.btnSalvar.TabIndex = 11;
@@ -186,7 +191,7 @@ namespace Oficina
             this.btnSair.AutoSize = true;
             this.btnSair.BackColor = System.Drawing.Color.Transparent;
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.Location = new System.Drawing.Point(684, 17);
+            this.btnSair.Location = new System.Drawing.Point(682, 17);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(32, 16);
             this.btnSair.TabIndex = 0;
@@ -202,6 +207,7 @@ namespace Oficina
             // 
             // txtCodigo
             // 
+            this.txtCodigo.Enabled = false;
             this.txtCodigo.Location = new System.Drawing.Point(60, 52);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(55, 20);
@@ -349,18 +355,9 @@ namespace Oficina
             this.txtTipo.Size = new System.Drawing.Size(121, 21);
             this.txtTipo.TabIndex = 20;
             // 
-            // listaFornecedor
-            // 
-            this.listaFornecedor.FormattingEnabled = true;
-            this.listaFornecedor.Location = new System.Drawing.Point(6, 23);
-            this.listaFornecedor.Name = "listaFornecedor";
-            this.listaFornecedor.Size = new System.Drawing.Size(215, 173);
-            this.listaFornecedor.TabIndex = 21;
-            this.listaFornecedor.SelectedIndexChanged += new System.EventHandler(this.listaFornecedor_SelectedIndexChanged);
-            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.listaFornecedor);
+            this.groupBox1.Controls.Add(this.listView1);
             this.groupBox1.Location = new System.Drawing.Point(484, 50);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(226, 201);
@@ -368,11 +365,58 @@ namespace Oficina
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lista de fornecedores";
             // 
+            // btnAddProduto
+            // 
+            this.btnAddProduto.AutoSize = true;
+            this.btnAddProduto.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddProduto.Location = new System.Drawing.Point(495, 14);
+            this.btnAddProduto.Name = "btnAddProduto";
+            this.btnAddProduto.Size = new System.Drawing.Size(149, 16);
+            this.btnAddProduto.TabIndex = 14;
+            this.btnAddProduto.Text = "Adicionar ao pedido";
+            this.btnAddProduto.Click += new System.EventHandler(this.btnAddProduto_Click);
+            // 
+            // lblFornecedor
+            // 
+            this.lblFornecedor.AutoSize = true;
+            this.lblFornecedor.Location = new System.Drawing.Point(246, 57);
+            this.lblFornecedor.Name = "lblFornecedor";
+            this.lblFornecedor.Size = new System.Drawing.Size(44, 13);
+            this.lblFornecedor.TabIndex = 23;
+            this.lblFornecedor.Text = "Cód For";
+            // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.idFor,
+            this.nomeFor});
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(6, 16);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(214, 179);
+            this.listView1.TabIndex = 24;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            this.listView1.Click += new System.EventHandler(this.listView1_Click);
+            // 
+            // idFor
+            // 
+            this.idFor.Text = "Código";
+            this.idFor.Width = 45;
+            // 
+            // nomeFor
+            // 
+            this.nomeFor.Text = "Fornecedor";
+            this.nomeFor.Width = 200;
+            // 
             // frmProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(722, 517);
+            this.ClientSize = new System.Drawing.Size(720, 517);
+            this.Controls.Add(this.lblFornecedor);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtTipo);
             this.Controls.Add(this.label6);
@@ -434,10 +478,14 @@ namespace Oficina
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ListBox listaFornecedor;
         private System.Windows.Forms.ComboBox txtTipo;
         private System.Windows.Forms.Label btnExcluir;
         private System.Windows.Forms.Label btnNovo;
         private System.Windows.Forms.Label btnSalvar;
+        private System.Windows.Forms.Label btnAddProduto;
+        private System.Windows.Forms.Label lblFornecedor;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader idFor;
+        private System.Windows.Forms.ColumnHeader nomeFor;
     }
 }

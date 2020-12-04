@@ -16,7 +16,7 @@ namespace Oficina
         {
             InitializeComponent();
         }
-
+        int idProduto;
         private void btnSair_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -54,6 +54,32 @@ namespace Oficina
         {
             frmPedidoFornecedor pedidoFor = new frmPedidoFornecedor();
             pedidoFor.Show();
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        { 
+
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEscolherProduto_Click(object sender, EventArgs e)
+        {
+            frmProduto forProduto = new frmProduto();
+            if (forProduto.ShowDialog() == DialogResult.OK)
+            {
+                lblCodigoProduto.Text = $"Código: {forProduto.codigoBarras}";
+                lblDescricao.Text = $"Descrição: {forProduto.descricaoProduto}";
+                lblFornecedor.Text = $"Fornecedor: {forProduto.nomefornecedor}";
+                lblTipo.Text = $"Tipo: {forProduto.tipo}";
+                lblIdFornecedor.Text = forProduto._idFornecedor;
+                idProduto = Convert.ToInt32(forProduto._idProduto);
+            }
+
         }
     }
 }

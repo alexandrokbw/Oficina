@@ -57,9 +57,10 @@ namespace Oficina
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.dtgCliente = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.senha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.btnAddPedido = new System.Windows.Forms.Label();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCliente)).BeginInit();
             this.SuspendLayout();
@@ -73,6 +74,7 @@ namespace Oficina
             // 
             this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
             this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel1.Controls.Add(this.btnAddPedido);
             this.bunifuGradientPanel1.Controls.Add(this.btnVeiculo);
             this.bunifuGradientPanel1.Controls.Add(this.label9);
             this.bunifuGradientPanel1.Controls.Add(this.btnExcluir);
@@ -94,7 +96,7 @@ namespace Oficina
             this.btnVeiculo.AutoSize = true;
             this.btnVeiculo.BackColor = System.Drawing.Color.Transparent;
             this.btnVeiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVeiculo.Location = new System.Drawing.Point(550, 19);
+            this.btnVeiculo.Location = new System.Drawing.Point(406, 19);
             this.btnVeiculo.Name = "btnVeiculo";
             this.btnVeiculo.Size = new System.Drawing.Size(60, 16);
             this.btnVeiculo.TabIndex = 8;
@@ -107,7 +109,7 @@ namespace Oficina
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(759, 19);
+            this.label9.Location = new System.Drawing.Point(757, 22);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(29, 13);
             this.label9.TabIndex = 7;
@@ -119,7 +121,7 @@ namespace Oficina
             this.btnExcluir.AutoSize = true;
             this.btnExcluir.BackColor = System.Drawing.Color.Transparent;
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.Location = new System.Drawing.Point(369, 19);
+            this.btnExcluir.Location = new System.Drawing.Point(223, 19);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(54, 16);
             this.btnExcluir.TabIndex = 6;
@@ -131,7 +133,7 @@ namespace Oficina
             this.btnNovo.AutoSize = true;
             this.btnNovo.BackColor = System.Drawing.Color.Transparent;
             this.btnNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNovo.Location = new System.Drawing.Point(464, 19);
+            this.btnNovo.Location = new System.Drawing.Point(319, 19);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(45, 16);
             this.btnNovo.TabIndex = 5;
@@ -143,7 +145,7 @@ namespace Oficina
             this.btnSalvar.AutoSize = true;
             this.btnSalvar.BackColor = System.Drawing.Color.Transparent;
             this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.Location = new System.Drawing.Point(275, 19);
+            this.btnSalvar.Location = new System.Drawing.Point(128, 19);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(53, 16);
             this.btnSalvar.TabIndex = 4;
@@ -323,13 +325,6 @@ namespace Oficina
             this.dtgCliente.TabIndex = 18;
             this.dtgCliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgCliente_CellClick);
             // 
-            // bunifuDragControl1
-            // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this.bunifuGradientPanel1;
-            this.bunifuDragControl1.Vertical = true;
-            // 
             // idCliente
             // 
             this.idCliente.DataPropertyName = "idCliente";
@@ -344,6 +339,25 @@ namespace Oficina
             this.senha.Name = "senha";
             this.senha.ReadOnly = true;
             this.senha.Visible = false;
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.bunifuGradientPanel1;
+            this.bunifuDragControl1.Vertical = true;
+            // 
+            // btnAddPedido
+            // 
+            this.btnAddPedido.AutoSize = true;
+            this.btnAddPedido.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddPedido.Location = new System.Drawing.Point(508, 19);
+            this.btnAddPedido.Name = "btnAddPedido";
+            this.btnAddPedido.Size = new System.Drawing.Size(149, 16);
+            this.btnAddPedido.TabIndex = 9;
+            this.btnAddPedido.Text = "Adicionar ao pedido";
+            this.btnAddPedido.Click += new System.EventHandler(this.btnAddPedido_Click);
             // 
             // frmCliente
             // 
@@ -410,5 +424,6 @@ namespace Oficina
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn senha;
+        private System.Windows.Forms.Label btnAddPedido;
     }
 }

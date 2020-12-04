@@ -4,14 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="2055d4e907224cbb9b3a3ee0a1e78569" Name="Diagram1" >
-        <EntityTypeShape EntityType="DatabaseModel.tbAtendente" Width="1.5" PointX="3.875" PointY="0.75" />
-        <EntityTypeShape EntityType="DatabaseModel.tbCliente" Width="1.5" PointX="9.375" PointY="0.75" />
-        <EntityTypeShape EntityType="DatabaseModel.tbFornecedor" Width="1.5" PointX="5.875" PointY="0.75" />
-        <EntityTypeShape EntityType="DatabaseModel.tbPedidoCliente" Width="1.5" PointX="2.125" PointY="3.75" />
-        <EntityTypeShape EntityType="DatabaseModel.tbPedidoFornecedor" Width="1.5" PointX="0.5" PointY="0.75" />
+      <Diagram DiagramId="2055d4e907224cbb9b3a3ee0a1e78569" Name="Diagram1" ZoomLevel="106" >
+        <EntityTypeShape EntityType="DatabaseModel.tbAtendente" Width="1.5" PointX="4" PointY="0.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbCliente" Width="1.5" PointX="9.25" PointY="0.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbFornecedor" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbPedidoCliente" Width="1.5" PointX="7.75" PointY="3.25" />
         <EntityTypeShape EntityType="DatabaseModel.tbProduto" Width="1.625" PointX="2.125" PointY="0.75" />
-        <EntityTypeShape EntityType="DatabaseModel.tbVeiculo" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbVeiculo" Width="1.5" PointX="7.5" PointY="0.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbPedidoFornecedor" Width="1.5" PointX="0.5" PointY="0.875" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
