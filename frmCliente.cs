@@ -18,6 +18,15 @@ namespace Oficina
         }
 
         frmMensagem mesagem;
+        public string nome;
+        public string telefone;
+        public string cpf;
+        public string endereco;
+        public string cep;
+        public string cidade;
+        public string estado;
+        public int _idCliente;
+
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             var context = new DatabaseEntities();
@@ -159,7 +168,15 @@ namespace Oficina
 
         private void btnAddPedido_Click(object sender, EventArgs e)
         {
-
+            _idCliente = Convert.ToInt32(txtCodigo.Text);
+            nome = txtNome.Text;
+            telefone = txtTelefone.Text;
+            cpf = txtCPF.Text;
+            endereco = txtEndereco.Text;
+            cep = txtCep.Text;
+            cidade = txtCidade.Text;
+            estado = txtEstado.Text;
+            this.DialogResult = System.Windows.Forms.DialogResult.OK;
         }
     }
 }

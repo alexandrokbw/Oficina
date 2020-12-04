@@ -17,7 +17,8 @@ namespace Oficina
         {
             InitializeComponent();
         }
-        internal string _idFornecedor,codigoBarras, descricaoProduto, codigoFor, nomefornecedor, tipo,_idProduto;
+        internal string _idFornecedor,codigoBarras, descricaoProduto, codigoFor, nomefornecedor,
+                         tipo,_idProduto, precoVenda, precoCusto, estoque;
 
         frmMensagem mensagem;
         private void btnSair_Click(object sender, EventArgs e)
@@ -208,6 +209,9 @@ namespace Oficina
             tipo = txtTipo.Text;
             _idProduto = txtCodigo.Text;
             _idFornecedor = txtCodigoFor.Text;
+            precoCusto = txtPrecoCusto.Text;
+            precoVenda = txtPrecoVenda.Text;
+            estoque = txtEstoqueAtual.Text;
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
         }
     }

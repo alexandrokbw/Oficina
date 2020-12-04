@@ -17,6 +17,8 @@ namespace Oficina
             InitializeComponent();
         }
         int idProduto;
+        private int idCliente;
+
         private void btnSair_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -76,10 +78,28 @@ namespace Oficina
                 lblDescricao.Text = $"Descrição: {forProduto.descricaoProduto}";
                 lblFornecedor.Text = $"Fornecedor: {forProduto.nomefornecedor}";
                 lblTipo.Text = $"Tipo: {forProduto.tipo}";
-                lblIdFornecedor.Text = forProduto._idFornecedor;
                 idProduto = Convert.ToInt32(forProduto._idProduto);
+                lblPrecoVenda.Text = $"Venda: {forProduto.precoVenda}";
+                lblPrecoCusto.Text = $"Custo: {forProduto.precoCusto}";
+                lblEstoque.Text = $"Estoque: {forProduto.estoque}";
             }
 
+        }
+
+        private void btnAddCliente_Click(object sender, EventArgs e)
+        {
+            frmCliente forCliente = new frmCliente();
+            if (forCliente.ShowDialog() == DialogResult.OK)
+            { 
+                idCliente = forCliente._idCliente;
+                lblNome.Text=$"Nome: {forCliente.nome}";
+                lblTelefone.Text=$"Telefone: {forCliente.telefone}";
+                lblCpf.Text=$"CPF: {forCliente.cpf}";
+                lblEndereco.Text=$"Endereco: {forCliente.endereco}";
+                lblCep.Text=$"CEP: {forCliente.cep}";
+                lblCidade.Text=$"Cidade: {forCliente.cidade}";
+               lblEstado.Text= $"Estado: {forCliente.estado}";
+            }
         }
     }
 }
