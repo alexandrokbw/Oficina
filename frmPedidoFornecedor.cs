@@ -41,7 +41,7 @@ namespace Oficina
                          Fornecedor = Fornecedor.nome,
                          produto.precoCusto,
                          produto.precoVenda,
-                         produto.estoque,
+                         //produto.estoque,
                          produto.estoqueMinimo,
                          produto.tipo,
                          pedidoFor.quantidade,
