@@ -148,7 +148,7 @@
           <Property Name="estado" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="cep" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
           <Property Name="telefone" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
-          <Property Name="cpf" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Name="cpf" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="tbFornecedor">
           <Key>

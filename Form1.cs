@@ -16,7 +16,7 @@ namespace Oficina
         {
             InitializeComponent();
         }
-        int idProduto;
+        int _idProduto;
         private int idCliente;
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -74,23 +74,24 @@ namespace Oficina
             frmProduto forProduto = new frmProduto();
             if (forProduto.ShowDialog() == DialogResult.OK)
             {
-                lblCodigoProduto.Text = $"Código: {forProduto.codigoBarras}";
-                lblDescricao.Text = $"Descrição: {forProduto.descricaoProduto}";
-                lblFornecedor.Text = $"Fornecedor: {forProduto.nomefornecedor}";
-                lblTipo.Text = $"Tipo: {forProduto.tipo}";
-                idProduto = Convert.ToInt32(forProduto._idProduto);
-                lblPrecoVenda.Text = $"Venda: {forProduto.precoVenda}";
-                lblPrecoCusto.Text = $"Custo: {forProduto.precoCusto}";
-                lblEstoque.Text = $"Estoque: {forProduto.estoque}";
+                DatabaseEntities dataBase = new DatabaseEntities();
+                
+                    lblCodigoProduto.Text = $"Código: {dt.codigoBarras}";
+                    lblDescricao.Text = $"Descrição: {forProduto.descricaoProduto}";
+                    lblFornecedor.Text = $"Fornecedor: {forProduto.nomefornecedor}";
+                    lblTipo.Text = $"Tipo: {forProduto.tipo}";
+                    _idProduto = Convert.ToInt32(forProduto._idProduto);
+                    lblPrecoVenda.Text = $"Venda: {forProduto.precoVenda}";
+                    lblPrecoCusto.Text = $"Custo: {forProduto.precoCusto}";
+                    lblEstoque.Text = $"Estoque: {forProduto.estoque}";
             }
-
         }
-
         private void btnAddCliente_Click(object sender, EventArgs e)
         {
             frmCliente forCliente = new frmCliente();
             if (forCliente.ShowDialog() == DialogResult.OK)
-            { 
+            {
+                //Produto.Add(forCliente._idCliente);
                 idCliente = forCliente._idCliente;
                 lblNome.Text=$"Nome: {forCliente.nome}";
                 lblTelefone.Text=$"Telefone: {forCliente.telefone}";
@@ -98,8 +99,28 @@ namespace Oficina
                 lblEndereco.Text=$"Endereco: {forCliente.endereco}";
                 lblCep.Text=$"CEP: {forCliente.cep}";
                 lblCidade.Text=$"Cidade: {forCliente.cidade}";
-               lblEstado.Text= $"Estado: {forCliente.estado}";
+                lblEstado.Text= $"Estado: {forCliente.estado}";
             }
+        }
+        private void btnSalvarPedido_Click(object sender, EventArgs e)
+        {
+            frmFimPedido fimPedido = new frmFimPedido();
+            fimPedido.ShowDialog();
+        }
+
+        private void btnAddProduto_Click(object sender, EventArgs e)
+        {
+                dtgPedidoCliente.Rows.Add();
+                int index = dtgPedidoCliente.Rows.Count-1;
+                dtgPedidoCliente.Rows[index].Cells["Codigo"].Value = "a";
+                dtgPedidoCliente.Rows[index].Cells["Descricao"].Value = "b";
+                dtgPedidoCliente.Rows[index].Cells["Estoque"].Value = "c";
+                dtgPedidoCliente.Rows[index].Cells["Valor"].Value = "d";
+        }
+
+        private void btnRemover_Click(object sender, EventArgs e)
+        {
+            dtgPedidoCliente.Rows.RemoveAt(dtgPedidoCliente.CurrentRow.Index);
         }
     }
 }

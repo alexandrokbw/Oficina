@@ -51,7 +51,7 @@ namespace Oficina
                 {
                     Properties.Settings.Default.usuario = atendente.nome;
                     Properties.Settings.Default.Save();
-                    this.DialogResult = System.Windows.Forms.DialogResult.OK;
+                    //this.DialogResult = System.Windows.Forms.DialogResult.OK;
                 }
             }
             catch (Exception)
